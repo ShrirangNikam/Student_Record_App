@@ -1,0 +1,39 @@
+<mat-dialog-actions>Add Student Form</mat-dialog-actions>
+<div mat-dialog-content>
+  <form [formGroup]="studentForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Student Full Name</mat-label>
+      <input formControlName="Name" matInput placeholder="Name">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Student Roll Number</mat-label>
+      <input formControlName="RollNumber" matInput placeholder="Roll Number">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Student Class</mat-label>
+      <mat-select input formControlName="Class" mat-select placeholder="Class">
+      <mat-option value="First Year">First Year</mat-option>
+      <mat-option value="Second Year">Second Year</mat-option>
+      <mat-option value="Third Year">Third Year</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Student Division</mat-label>
+      <input formControlName="Division" matInput placeholder="Division">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input formControlName="Date" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> 
+  </form>     
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addStudent()">{{actionBtn}}</button>
+</div>
